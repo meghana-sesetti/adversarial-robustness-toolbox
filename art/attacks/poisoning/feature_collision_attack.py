@@ -128,6 +128,8 @@ class FeatureCollisionAttack(PoisoningAttackWhiteBox):
             raise ValueError("Must input at least one poison point")
 
         target_features = self.estimator.get_activations(self.target, self.feature_layer, 1)
+        print(target_features)
+        print(target_features.shape)
         for init_attack in x:
             old_attack = np.expand_dims(np.copy(init_attack), axis=0)
             poison_features = self.estimator.get_activations(old_attack, self.feature_layer, 1)
