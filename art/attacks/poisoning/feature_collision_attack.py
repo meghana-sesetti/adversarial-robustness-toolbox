@@ -202,6 +202,11 @@ class FeatureCollisionAttack(PoisoningAttackWhiteBox):
         :param poison: the current poison samples.
         :return: poison example closer in feature representation to target space.
         """
+        print("in forward step")
+        print(self.attack_loss)
+        print(self.poison_placeholder)
+        print(self.target_placeholder)
+        
         (attack_grad,) = self.estimator.custom_loss_gradient(
             self.attack_loss,
             [self.poison_placeholder, self.target_placeholder],
