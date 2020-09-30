@@ -206,6 +206,9 @@ class FeatureCollisionAttack(PoisoningAttackWhiteBox):
         print(self.attack_loss)
         print(self.poison_placeholder)
         print(self.target_placeholder)
+        print(poison, "poison")
+        print(self.target, "target")
+        print(self.feature_layer)
         
         (attack_grad,) = self.estimator.custom_loss_gradient(
             self.attack_loss,
