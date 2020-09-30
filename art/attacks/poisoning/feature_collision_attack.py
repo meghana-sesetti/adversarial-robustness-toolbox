@@ -213,6 +213,7 @@ class FeatureCollisionAttack(PoisoningAttackWhiteBox):
             [poison, self.target],
             name="feature_collision_" + str(self.feature_layer),
         )
+        print(self.learning_rate, "learning")
         poison -= self.learning_rate * attack_grad[0]
 
         return poison
